@@ -1,0 +1,415 @@
+<title>Vídeo completo: O Dia do Confisco</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Archivo:wght@400;600;800&display=swap">
+<style>
+/* Layout: one cinematic 16:9 stage, controls and shot list underneath. Deliberately dark-only (screening room). */
+:root{
+  --bg:#0d1019; --panel:#161b29; --line:#2a3249; --fg:#e9e6df; --muted:#9aa1b5;
+  --red:#d32f2f; --amber:#ffa53b; --cream:#ebe3d5;
+  --f-display:"Bebas Neue","Arial Narrow",Impact,sans-serif;
+  --f-hand:"Caveat","Comic Sans MS",cursive;
+  --f-ui:"Archivo",system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
+}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--f-ui);font-size:15px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:980px;margin:0 auto;display:grid;gap:18px}
+header h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,5vw,44px);letter-spacing:.02em;margin:0;line-height:1;text-wrap:balance}
+header p{margin:6px 0 0;color:var(--muted);max-width:65ch}
+.stage{position:relative;width:100%;aspect-ratio:16/9;max-width:100%;overflow:hidden;border-radius:10px;background:#000;border:1px solid var(--line)}
+.stage svg.scene{position:absolute;inset:0;width:100%;height:100%;display:block;transform-origin:50% 50%}
+.badge{position:absolute;top:3.5%;left:2.5%;background:var(--red);color:#fff;font-family:var(--f-display);font-size:clamp(14px,2.6vw,26px);letter-spacing:.04em;padding:.15em .55em .05em;border:3px solid #111;border-radius:6px;box-shadow:3px 3px 0 #111;z-index:3}
+.badge.swap{animation:badge .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes badge{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.sub{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:min(88%,820px);text-align:center;z-index:3;font-size:clamp(12px,1.9vw,19px);font-weight:600;line-height:1.35;color:#fff;text-shadow:0 2px 3px #000,0 0 10px #000}
+.sub span{background:rgba(0,0,0,.55);padding:.15em .45em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cover{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(20,26,44,.55),rgba(0,0,0,.85));cursor:pointer;border:0;color:#fff;font:inherit;width:100%}
+.cover .big{font-family:var(--f-display);font-size:clamp(26px,5vw,52px);letter-spacing:.03em;display:flex;align-items:center;gap:.4em}
+.cover .tri{width:0;height:0;border-left:.7em solid var(--red);border-top:.42em solid transparent;border-bottom:.42em solid transparent}
+.cover small{display:block;color:var(--muted);font-family:var(--f-ui);font-size:13px;margin-top:4px;text-align:center}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--red)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.controls button,.controls label{font:600 14px var(--f-ui);color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.controls button:hover,.controls label:hover{border-color:var(--muted)}
+.controls button:focus-visible,.controls input:focus-visible+span,.shots button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.controls .primary{background:var(--red);border-color:var(--red);color:#fff}
+.controls input{accent-color:var(--red);margin:0}
+.time{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;list-style:none;padding:0;margin:0}
+.shots button{width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--fg);font:inherit;cursor:pointer;display:grid;gap:2px}
+.shots button[aria-current="true"]{border-color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+.shots b{font-family:var(--f-display);font-weight:400;font-size:18px;letter-spacing:.03em}
+.shots span{color:var(--muted);font-size:12.5px;line-height:1.35}
+.note{color:var(--muted);font-size:13px;max-width:70ch;margin:0}
+/* animation vocabulary inside the SVG */
+.pop{transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.fade{animation:fade .8s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.bob{transform-box:fill-box;transform-origin:bottom center;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.count{transform-box:fill-box;transform-origin:center;animation:count .7s ease-in-out infinite}
+@keyframes count{50%{transform:translateY(-10px) rotate(-6deg)}}
+.flick{animation:flick .12s steps(2) infinite}
+@keyframes flick{50%{opacity:.25}}
+.brush{stroke-dasharray:2200;stroke-dashoffset:2200;animation:brush .9s cubic-bezier(.7,0,.3,1) .2s forwards}
+@keyframes brush{to{stroke-dashoffset:0}}
+.crack{stroke-dasharray:400;stroke-dashoffset:400;animation:brush .5s ease forwards}
+.zzz{animation:zzz 2.4s ease-in infinite}
+@keyframes zzz{0%{opacity:0;transform:translate(0,0)}30%{opacity:1}100%{opacity:0;transform:translate(30px,-60px)}}
+.fill-up{transform-box:fill-box;transform-origin:bottom;animation:fillup 2.2s cubic-bezier(.5,0,.3,1) .4s both}
+@keyframes fillup{from{transform:scaleY(.05)}to{transform:scaleY(1)}}
+.grow-x{transform-box:fill-box;transform-origin:left;animation:growx .9s cubic-bezier(.5,0,.3,1) both}
+@keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.fall{transform-box:fill-box;transform-origin:top left;animation:fall .7s ease-in both}
+@keyframes fall{0%{transform:none;opacity:1}100%{transform:translate(60px,500px) rotate(35deg);opacity:0}}
+.drip{animation:drip .6s ease-in both}
+@keyframes drip{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(240px);opacity:0}}
+.wave{animation:wave 1.2s ease-out infinite}
+@keyframes wave{0%{opacity:0;transform:translateX(0)}40%{opacity:1}100%{opacity:0;transform:translateX(40px)}}
+.slide-out{animation:slideout 1.4s ease-in both}
+@keyframes slideout{from{transform:translateX(0)}to{transform:translateX(-700px)}}
+.dim{animation:dim 2s ease 7.2s forwards}
+@keyframes dim{to{opacity:.45}}
+.stage.paused *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.pop,.fade,.brush,.crack{animation-duration:.01s}.blink,.bob,.count,.flick,.zzz{animation:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>O Dia em Que o Governo Pegou Seu Dinheiro</h1>
+    <p>Prévia animada da abertura (cenas 1 a 11 do roteiro, ~1 min). É um animatic: mostra enquadramento, ritmo, selos de tempo e legendas no estilo bonequinho 2D, não a arte final.</p>
+  </header>
+
+  <div class="stage" id="stage" aria-label="Prévia animada">
+    <div class="badge" id="badge">15/03/1990 · 23:40</div>
+    <div class="sub" id="sub"></div>
+    <button class="cover" id="cover" type="button">
+      <div><div class="big"><span class="tri"></span>ASSISTIR PRÉVIA</div><small>Ative "Narração" para ouvir a voz do navegador em português</small></div>
+    </button>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="prog"></i></div>
+
+  <div class="controls">
+    <button class="primary" id="play" type="button">▶ Play</button>
+    <button id="restart" type="button">↺ Recomeçar</button>
+    <label><input type="checkbox" id="voice"><span>Narração</span></label>
+    <label><input type="checkbox" id="sound" checked><span>Som ambiente</span></label>
+    <span class="time" id="time">0:00 / 0:00</span>
+  </div>
+
+  <ol class="shots" id="shots"></ol>
+  <p class="note">A narração usa a voz sintética do seu navegador só para dar noção do ritmo. No vídeo final entra a locução gravada (ou ElevenLabs), a trilha e os efeitos sonoros completos.</p>
+</div>
+
+<script>
+(function(){
+const O='#141414';            // outline
+const SW=6;                    // stroke width
+const NIGHT={wall:'#283152',wall2:'#212a47',floor:'#1a2138',wood:'#8a5a3c',wood2:'#6e4630'};
+
+/* ---------- drawing helpers ---------- */
+function head(x,y,{hair='#3b2a20',style='short',mouth='line',brows='calm',eyes='open',rot=0}={}){
+  let h='';
+  if(style==='bun') h+=`<circle cx="${x+30}" cy="${y-50}" r="20" fill="${hair}" stroke="${O}" stroke-width="${SW}"/>`;
+  h+=`<ellipse cx="${x}" cy="${y}" rx="50" ry="58" fill="#fbfaf6" stroke="${O}" stroke-width="${SW}"/>`;
+  if(style==='short') h+=`<path d="M${x-50} ${y-8} Q${x-54} ${y-66} ${x} ${y-62} Q${x+54} ${y-66} ${x+50} ${y-10} Q${x+30} ${y-40} ${x-10} ${y-34} Q${x-36} ${y-30} ${x-50} ${y-8}Z" fill="${hair}" stroke="${O}" stroke-width="${SW}" stroke-linejoin="round"/>`;
+  if(style==='long'||style==='bun') h+=`<path d="M${x-52} ${y+30} Q${x-62} ${y-70} ${x} ${y-62} Q${x+62} ${y-70} ${x+52} ${y+30} L${x+40} ${y-12} Q${x} ${y-40} ${x-40} ${y-12}Z" fill="${hair}" stroke="${O}" stroke-width="${SW}" stroke-linejoin="round"/>`;
+  if(eyes==='open') h+=`<g class="blink"><circle cx="${x-17}" cy="${y+2}" r="6" fill="${O}"/><circle cx="${x+17}" cy="${y+2}" r="6" fill="${O}"/></g>`;
+  else h+=`<path d="M${x-25} ${y+4} q8 7 16 0 M${x+9} ${y+4} q8 7 16 0" fill="none" stroke="${O}" stroke-width="4" stroke-linecap="round"/>`;
+  const b={calm:[`M${x-27} ${y-14} l18 -2`,`M${x+9} ${y-16} l18 2`],worried:[`M${x-27} ${y-12} l18 -8`,`M${x+9} ${y-20} l18 8`],up:[`M${x-27} ${y-20} q9 -6 18 0`,`M${x+9} ${y-20} q9 -6 18 0`]}[brows];
+  h+=`<path d="${b.join(' ')}" stroke="${O}" stroke-width="4.5" stroke-linecap="round" fill="none"/>`;
+  const m={line:`<path d="M${x-10} ${y+28} l20 0" stroke="${O}" stroke-width="4.5" stroke-linecap="round"/>`,
+           smile:`<path d="M${x-14} ${y+24} q14 12 28 0" stroke="${O}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`,
+           o:`<ellipse cx="${x}" cy="${y+30}" rx="9" ry="12" fill="${O}"/>`}[mouth];
+  h+=m;
+  return rot?`<g transform="rotate(${rot} ${x} ${y})">${h}</g>`:h;
+}
+function body(x,y,{shirt='#3a5a8c',arms='down'}={}){
+  // y = shoulder line
+  let s=`<path d="M${x-46} ${y+8} Q${x-48} ${y-6} ${x-30} ${y-8} L${x+30} ${y-8} Q${x+48} ${y-6} ${x+46} ${y+8} L${x+42} ${y+130} L${x-42} ${y+130}Z" fill="${shirt}" stroke="${O}" stroke-width="${SW}" stroke-linejoin="round"/>`;
+  const A={down:[[x-40,y+10,x-58,y+120],[x+40,y+10,x+58,y+120]],
+           table:[[x-38,y+14,x-70,y+110],[x+38,y+14,x+70,y+110]],
+           lean:[[x-40,y+10,x-58,y+120],[x+38,y+12,x+96,y-30]]}[arms];
+  A.forEach(a=>{s+=`<line x1="${a[0]}" y1="${a[1]}" x2="${a[2]}" y2="${a[3]}" stroke="${O}" stroke-width="12" stroke-linecap="round"/><circle cx="${a[2]}" cy="${a[3]}" r="11" fill="#fbfaf6" stroke="${O}" stroke-width="5"/>`});
+  return s;
+}
+function legs(x,y,len=150){return `<line x1="${x-20}" y1="${y}" x2="${x-26}" y2="${y+len}" stroke="${O}" stroke-width="12" stroke-linecap="round"/><line x1="${x+20}" y1="${y}" x2="${x+26}" y2="${y+len}" stroke="${O}" stroke-width="12" stroke-linecap="round"/><path d="M${x-26} ${y+len} l-22 0 M${x+26} ${y+len} l22 0" stroke="${O}" stroke-width="12" stroke-linecap="round"/>`}
+function person(x,y,o={}){ // y = feet
+  return `<g class="bob">${legs(x,y-150)}${body(x,y-290,o)}${head(x,y-350,o)}</g>`;
+}
+function label(x,y,text,ax,ay,delay=.6){
+  return `<g class="pop" style="animation-delay:${delay}s"><text x="${x}" y="${y}" font-family="Caveat,cursive" font-weight="700" font-size="54" fill="#fff" stroke="${O}" stroke-width="10" paint-order="stroke">${text}</text><path d="M${x+10} ${y+14} Q${(x+ax)/2-30} ${(y+ay)/2+40} ${ax} ${ay}" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" marker-end="url(#arr)"/></g>`;
+}
+const DEFS=`<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#fff"/></marker>
+<radialGradient id="lamp" cx="50%" cy="20%" r="70%"><stop offset="0" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+<radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".75"/></radialGradient>
+<radialGradient id="tvglow" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#9fc4ff" stop-opacity=".45"/><stop offset="1" stop-color="#9fc4ff" stop-opacity="0"/></radialGradient>
+<pattern id="paper" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#ebe3d5"/><circle cx="8" cy="12" r="1.2" fill="#d8cbb5"/><circle cx="28" cy="30" r="1" fill="#d8cbb5"/></pattern>
+</defs>`;
+const VIG=`<rect width="1600" height="900" fill="url(#vig)" pointer-events="none"/>`;
+
+function kitchen(){
+  return `<rect width="1600" height="900" fill="${NIGHT.wall}"/>
+  <rect y="640" width="1600" height="260" fill="${NIGHT.floor}"/>
+  <line x1="0" y1="640" x2="1600" y2="640" stroke="${O}" stroke-width="${SW}"/>
+  <!-- window -->
+  <rect x="1080" y="150" width="300" height="250" fill="#0e1430" stroke="${O}" stroke-width="${SW}"/>
+  <circle cx="1310" cy="210" r="30" fill="#f3ecd2"/>
+  <rect x="1110" y="300" width="40" height="100" fill="#1b2248"/><rect x="1160" y="260" width="60" height="140" fill="#161d40"/><rect x="1230" y="320" width="50" height="80" fill="#1b2248"/>
+  <rect x="1172" y="280" width="10" height="12" fill="#ffd27a"/><rect x="1196" y="310" width="10" height="12" fill="#ffd27a"/>
+  <line x1="1230" y1="150" x2="1230" y2="400" stroke="${O}" stroke-width="${SW}"/><line x1="1080" y1="275" x2="1380" y2="275" stroke="${O}" stroke-width="${SW}"/>
+  <!-- clock 23:40 -->
+  <circle cx="300" cy="200" r="58" fill="#f2efe6" stroke="${O}" stroke-width="${SW}"/>
+  <line x1="300" y1="200" x2="296" y2="166" stroke="${O}" stroke-width="7" stroke-linecap="round"/>
+  <line x1="300" y1="200" x2="262" y2="222" stroke="${O}" stroke-width="5" stroke-linecap="round"/>
+  <!-- lamp -->
+  <line x1="800" y1="0" x2="800" y2="110" stroke="${O}" stroke-width="4"/>
+  <path d="M740 150 Q800 90 860 150Z" fill="#c9792f" stroke="${O}" stroke-width="${SW}"/>
+  <rect width="1600" height="900" fill="url(#lamp)"/>`;
+}
+function table(y=560){return `<rect x="420" y="${y}" width="760" height="40" fill="${NIGHT.wood}" stroke="${O}" stroke-width="${SW}"/><rect x="460" y="${y+40}" width="28" height="${700-y}" fill="${NIGHT.wood2}" stroke="${O}" stroke-width="${SW}"/><rect x="1112" y="${y+40}" width="28" height="${700-y}" fill="${NIGHT.wood2}" stroke="${O}" stroke-width="${SW}"/>`}
+function notes(x,y,n=4,cls='',delay=0){let s='';for(let i=0;i<n;i++){s+=`<g class="${cls}" style="animation-delay:${delay+i*.15}s"><rect x="${x+i*10}" y="${y-i*8}" width="120" height="58" rx="4" fill="#9bc28a" stroke="${O}" stroke-width="4" transform="rotate(${-6+i*3} ${x+60} ${y+29})"/><circle cx="${x+60+i*10}" cy="${y+29-i*8}" r="14" fill="none" stroke="#4d7a44" stroke-width="3"/></g>`}return s}
+function tin(x,y,s=1,cls='',delay=0){return `<g class="${cls}" style="animation-delay:${delay}s"><g transform="translate(${x} ${y}) scale(${s})"><rect x="-70" y="-60" width="140" height="110" rx="10" fill="#2f6fd6" stroke="${O}" stroke-width="${SW}"/><rect x="-78" y="-80" width="156" height="28" rx="8" fill="#3d82ee" stroke="${O}" stroke-width="${SW}"/><rect x="-46" y="-30" width="92" height="40" rx="6" fill="#f3ecd2" stroke="${O}" stroke-width="4"/><text x="0" y="-3" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="17" fill="#1c3f80">BISCOITOS</text></g></g>`}
+function house(x,y,s=1){return `<g transform="translate(${x} ${y}) scale(${s})"><rect x="-120" y="-90" width="240" height="160" fill="#f2c94c" stroke="${O}" stroke-width="${SW}"/><path d="M-145 -85 L0 -200 L145 -85Z" fill="#c0563b" stroke="${O}" stroke-width="${SW}" stroke-linejoin="round"/><rect x="-30" y="-10" width="60" height="80" fill="#7a4a2c" stroke="${O}" stroke-width="5"/><rect x="-100" y="-60" width="50" height="45" fill="#cfe6ff" stroke="${O}" stroke-width="5"/><rect x="50" y="-60" width="50" height="45" fill="#cfe6ff" stroke="${O}" stroke-width="5"/><path d="M-170 70 L-170 20 M-150 70 L-150 20 M-130 70 L-130 20 M-175 35 L-125 35" stroke="#3aa35b" stroke-width="9" stroke-linecap="round"/></g>`}
+function tv(x,y,on){return `<g><rect x="${x-230}" y="${y-170}" width="460" height="330" rx="40" fill="#5b3a24" stroke="${O}" stroke-width="${SW}"/><rect x="${x-190}" y="${y-135}" width="330" height="260" rx="30" fill="${on?'#cfd8e6':'#0b0f18'}" stroke="${O}" stroke-width="${SW}"/><circle cx="${x+180}" cy="${y-80}" r="16" fill="#c8a165" stroke="${O}" stroke-width="4"/><circle cx="${x+180}" cy="${y-20}" r="16" fill="#c8a165" stroke="${O}" stroke-width="4"/><line x1="${x-100}" y1="${y+160}" x2="${x-130}" y2="${y+230}" stroke="${O}" stroke-width="10"/><line x1="${x+100}" y1="${y+160}" x2="${x+130}" y2="${y+230}" stroke="${O}" stroke-width="10"/><line x1="${x-40}" y1="${y-170}" x2="${x-110}" y2="${y-260}" stroke="${O}" stroke-width="5"/><line x1="${x+40}" y1="${y-170}" x2="${x+110}" y2="${y-260}" stroke="${O}" stroke-width="5"/></g>`}
+function living(){return `<rect width="1600" height="900" fill="#1c2340"/><rect y="700" width="1600" height="200" fill="#151b31"/><line x1="0" y1="700" x2="1600" y2="700" stroke="${O}" stroke-width="${SW}"/><rect x="1150" y="160" width="250" height="300" fill="#2c3657" stroke="${O}" stroke-width="${SW}"/><path d="M1180 430 l60 -90 l50 60 l30 -40 l60 70z" fill="#3c4a73"/>`}
+function lock(x,y,delay){return `<g class="pop" style="animation-delay:${delay}s"><path d="M${x-32} ${y} v-34 a32 32 0 0 1 64 0 v34" fill="none" stroke="${O}" stroke-width="12"/><path d="M${x-32} ${y} v-34 a32 32 0 0 1 64 0 v34" fill="none" stroke="#e7e2d6" stroke-width="5"/><rect x="${x-50}" y="${y}" width="100" height="80" rx="12" fill="#d32f2f" stroke="${O}" stroke-width="${SW}"/><circle cx="${x}" cy="${y+34}" r="10" fill="${O}"/><rect x="${x-4}" y="${y+38}" width="8" height="22" fill="${O}"/></g>`}
+
+/* ---------- scenes ---------- */
+const S=[
+ {name:'A noite antes',badge:'15/03/1990 · 23:40',cam:['scale(1.08)','scale(1)'],sfx:['tick'],
+  say:'Quinze de março de 1990. São onze e quarenta da noite. Você está na mesa da cozinha contando dinheiro pela terceira vez.',
+  draw:()=>kitchen()+`<g>${legs(800,500,140)}</g>`+body(800,370,{shirt:'#3f6e9e',arms:'table'})+head(800,300,{mouth:'smile'})+table()+notes(700,520,3,'count')+notes(860,530,2)+VIG},
+ {name:'Close nas notas',badge:'15/03/1990 · 23:40',cam:['scale(1)','scale(1.12) translate(-2%,2%)'],sfx:['tick'],
+  say:'Quinze anos de hora extra na oficina, quinze anos sem férias. E está tudo ali: no banco, na poupança…',
+  draw:()=>`<rect width="1600" height="900" fill="${NIGHT.wood}"/><g opacity=".25">${Array.from({length:9},(_,i)=>`<path d="M0 ${80+i*100} Q800 ${60+i*100} 1600 ${90+i*100}" stroke="${NIGHT.wood2}" stroke-width="6" fill="none"/>`).join('')}</g>
+   <rect width="1600" height="900" fill="url(#lamp)"/>
+   <g transform="rotate(-4 1100 450)"><rect x="900" y="200" width="420" height="540" fill="#f6f2e7" stroke="${O}" stroke-width="${SW}"/><text x="1110" y="270" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="24" fill="#222">COMPROMISSO DE</text><text x="1110" y="302" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="24" fill="#222">COMPRA E VENDA</text>${Array.from({length:10},(_,i)=>`<line x1="950" y1="${350+i*32}" x2="${1270-(i%3)*40}" y2="${350+i*32}" stroke="#bbb" stroke-width="5"/>`).join('')}<path d="M960 690 q40 -30 70 0 t70 0" stroke="#2c4fa3" stroke-width="4" fill="none"/></g>
+   <g class="count">${notes(330,420,5)}</g>
+   <circle cx="300" cy="560" r="44" fill="#fbfaf6" stroke="${O}" stroke-width="${SW}"/><circle cx="560" cy="540" r="44" fill="#fbfaf6" stroke="${O}" stroke-width="${SW}"/>`+VIG},
+ {name:'Bia dormindo',badge:'15/03/1990 · 23:42',cam:['translate(3%,0) scale(1.1)','translate(-2%,0) scale(1.1)'],sfx:[],
+  say:'No quarto, a Bia dorme abraçada no urso. Ela já escolheu a cor da parede do quarto novo: lilás.',
+  draw:()=>`<rect width="1600" height="900" fill="#0f1426"/><path d="M0 0 L620 0 L620 900 L0 900Z" fill="#202a4a"/><path d="M620 0 L760 60 L760 840 L620 900Z" fill="#2b365c" stroke="${O}" stroke-width="${SW}"/>
+   <path d="M760 60 L760 840 L1600 900 L1600 0Z" fill="#141b33"/><path d="M760 840 L1600 900 L1600 600 L760 560Z" fill="#ffd27a" opacity=".12"/>
+   <rect x="900" y="560" width="560" height="140" rx="20" fill="#6c4a8f" stroke="${O}" stroke-width="${SW}"/><rect x="880" y="500" width="40" height="230" fill="#5a3b2a" stroke="${O}" stroke-width="${SW}"/>
+   <rect x="930" y="510" width="150" height="70" rx="30" fill="#f3ecd2" stroke="${O}" stroke-width="${SW}"/>
+   ${head(1010,515,{style:'long',hair:'#4a3020',eyes:'closed',mouth:'smile',rot:-70})}
+   <circle cx="1120" cy="560" r="40" fill="#b27a48" stroke="${O}" stroke-width="${SW}"/><circle cx="1095" cy="525" r="16" fill="#b27a48" stroke="${O}" stroke-width="5"/><circle cx="1145" cy="525" r="16" fill="#b27a48" stroke="${O}" stroke-width="5"/>
+   <path d="M1060 580 Q1250 520 1460 590 L1460 640 Q1250 620 1060 640Z" fill="#9d7cc8" stroke="${O}" stroke-width="${SW}"/>
+   <text x="1180" y="430" class="zzz" font-family="Bebas Neue,Impact" font-size="56" fill="#cfd8ff">Z</text><text x="1220" y="380" class="zzz" style="animation-delay:.8s" font-family="Bebas Neue,Impact" font-size="40" fill="#cfd8ff">z</text>
+   ${label(1220,250,'BIA, 8',1040,450,.8)}`+VIG},
+ {name:'A lata azul',badge:'15/03/1990 · 23:45',cam:['scale(1.15) translate(0,4%)','scale(1) translate(0,0)'],sfx:['clank@1.2'],
+  say:'…e um pouco aqui, nesta lata de biscoito azul. Para emergência.',
+  draw:()=>`<rect width="1600" height="900" fill="${NIGHT.wall2}"/><rect x="520" y="80" width="560" height="760" fill="#7a5236" stroke="${O}" stroke-width="${SW}"/><rect x="560" y="120" width="480" height="680" fill="#5e3e29" stroke="${O}" stroke-width="5"/>
+   <line x1="560" y1="330" x2="1040" y2="330" stroke="${O}" stroke-width="${SW}"/><line x1="560" y1="560" x2="1040" y2="560" stroke="${O}" stroke-width="${SW}"/>
+   <rect x="600" y="440" width="70" height="110" fill="#c94f4f" stroke="${O}" stroke-width="5"/><rect x="680" y="460" width="60" height="90" fill="#d9b44a" stroke="${O}" stroke-width="5"/><rect x="900" y="470" width="100" height="80" fill="#8fa8c9" stroke="${O}" stroke-width="5"/>
+   ${tin(800,300,1.1,'pop',.5)}
+   <line x1="1200" y1="900" x2="905" y2="300" stroke="${O}" stroke-width="16" stroke-linecap="round" class="fade" style="animation-delay:.2s"/><circle cx="905" cy="300" r="26" fill="#fbfaf6" stroke="${O}" stroke-width="${SW}" class="fade" style="animation-delay:.2s"/>
+   <rect width="1600" height="900" fill="url(#lamp)"/>`+VIG},
+ {name:'Lúcia na porta',badge:'15/03/1990 · 23:47',cam:['translate(-3%,0) scale(1.06)','translate(2%,0) scale(1.06)'],sfx:[],
+  say:'A Lúcia encosta na porta e ri de você. — Vai contar de novo? — Só mais uma vez.',
+  draw:()=>kitchen()+`<rect x="120" y="260" width="200" height="380" fill="#0b0f1e" stroke="${O}" stroke-width="${SW}"/>`
+   +person(230,700,{style:'bun',hair:'#2b1d16',shirt:'#c2577a',mouth:'smile',brows:'up'})
+   +legs(800,500,140)+body(800,370,{shirt:'#3f6e9e',arms:'table'})+head(800,300,{mouth:'smile'})+table()+notes(700,520,3)
+   +label(330,200,'LÚCIA',250,300,.6)
+   +`<g class="pop" style="animation-delay:2.8s"><path d="M330 330 h300 a24 24 0 0 1 24 24 v70 a24 24 0 0 1 -24 24 h-250 l-40 34 l6 -34 h-16 a24 24 0 0 1 -24 -24 v-70 a24 24 0 0 1 24 -24z" fill="#fff" stroke="${O}" stroke-width="5"/><text x="480" y="402" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="44" fill="#111">Vai contar de novo?</text></g>`+VIG},
+ {name:'O sonho',badge:'15/03/1990 · 23:48',cam:['scale(1)','scale(1.1) translate(-3%,3%)'],sfx:[],
+  say:'Na segunda-feira, vocês assinam a escritura da primeira casa. Casinha amarela, portão verde. Chega de aluguel.',
+  draw:()=>kitchen()+legs(800,500,140)+body(800,370,{shirt:'#3f6e9e',arms:'table'})+head(800,300,{mouth:'smile',brows:'up'})+table()
+   +`<g class="pop" style="animation-delay:.3s"><circle cx="880" cy="200" r="12" fill="#fff" stroke="${O}" stroke-width="4"/></g><g class="pop" style="animation-delay:.5s"><circle cx="920" cy="150" r="20" fill="#fff" stroke="${O}" stroke-width="4"/></g>
+   <g class="pop" style="animation-delay:.8s"><ellipse cx="1150" cy="190" rx="260" ry="150" fill="#fff" stroke="${O}" stroke-width="${SW}"/>${house(1150,250,.85)}</g>`+VIG},
+ {name:'Boa noite',badge:'15/03/1990 · 23:59',cam:['scale(1)','scale(1.04)'],sfx:['click@0.3'],
+  say:'Você apaga a luz e, pela primeira vez em muito tempo, dorme tranquilo.',
+  draw:()=>living()+tv(700,470,false)+`<path d="M560 420 q20 -60 40 0 v90 h-40z" fill="#1d2640" opacity=".9"/><rect width="1600" height="900" fill="#000" class="fade" style="animation-delay:1.5s;animation-duration:2.5s" opacity=".7"/>`+VIG},
+ {name:'A TV liga',badge:'16/03/1990 · 07:00',cam:['scale(1)','scale(1.18) translate(3%,0)'],sfx:['static@0.2'],
+  say:'Dezesseis de março. Sete da manhã. A TV da sala liga sozinha.',
+  draw:()=>`<rect width="1600" height="900" fill="#2d3a5e"/><rect y="700" width="1600" height="200" fill="#26304f"/><line x1="0" y1="700" x2="1600" y2="700" stroke="${O}" stroke-width="${SW}"/><rect x="1150" y="160" width="250" height="300" fill="#cfe0f5" stroke="${O}" stroke-width="${SW}"/>`
+   +tv(700,470,true)+`<g>${Array.from({length:40},(_,i)=>`<rect class="flick" style="animation-delay:${(i%7)*0.03}s" x="${520+(i*37)%320}" y="${345+Math.floor(i/8)*50}" width="${18+(i*13)%30}" height="10" fill="${i%2?'#fff':'#7a869c'}"/>`).join('')}</g><rect width="1600" height="900" fill="url(#tvglow)"/>`+VIG},
+ {name:'Plano Brasil Novo',badge:'16/03/1990 · 07:02',cam:['scale(1)','scale(1.12)'],sfx:['crowd@0'],
+  say:'E você descobre que acordou num país diferente.',
+  draw:()=>`<rect width="1600" height="900" fill="#1d2a4d"/><rect x="0" y="0" width="1600" height="160" fill="#16213e"/>
+   <rect x="300" y="60" width="1000" height="120" fill="#1f6f43" stroke="${O}" stroke-width="${SW}" class="pop" style="animation-delay:.3s"/><text x="800" y="145" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="84" fill="#f2c94c" class="pop" style="animation-delay:.5s">PLANO BRASIL NOVO</text>
+   ${person(800,860,{shirt:'#2b2f3a',mouth:'o',brows:'calm'})}
+   <path d="M620 620 L980 620 L940 900 L660 900Z" fill="#6b4a33" stroke="${O}" stroke-width="${SW}"/><circle cx="800" cy="700" r="40" fill="#f2c94c" stroke="${O}" stroke-width="5"/>
+   <line x1="760" y1="620" x2="740" y2="520" stroke="${O}" stroke-width="6"/><circle cx="740" cy="512" r="14" fill="#333" stroke="${O}" stroke-width="4"/>
+   <rect x="0" y="0" width="1600" height="900" fill="none" stroke="#5b3a24" stroke-width="70"/>`+VIG},
+ {name:'O congelamento',badge:'16/03/1990 · 07:05',cam:['scale(1.04)','scale(1)'],sfx:['lock@4.4','lock@5.15','lock@5.9'],
+  say:'Da noite para o dia, o governo congela o dinheiro de quase todo mundo. Poupança. Conta corrente. Aplicações.',
+  draw:()=>`<rect width="1600" height="900" fill="url(#paper)"/>
+   <text x="800" y="150" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="80" fill="#1a1a1a">DINHEIRO BLOQUEADO POR 18 MESES</text>
+   ${[[400,'POUPANÇA'],[800,'CONTA CORRENTE'],[1200,'APLICAÇÕES']].map(([x,t],i)=>`<g class="pop" style="animation-delay:${.2+i*.2}s"><circle cx="${x}" cy="440" r="140" fill="#fff" stroke="${O}" stroke-width="${SW}"/>${i===0?`<ellipse cx="${x}" cy="450" rx="80" ry="62" fill="#f19bb4" stroke="${O}" stroke-width="${SW}"/><rect x="${x-20}" y="380" width="40" height="10" fill="${O}"/><circle cx="${x+40}" cy="435" r="6" fill="${O}"/>`:i===1?`<rect x="${x-85}" y="390" width="170" height="110" rx="14" fill="#5d8fd8" stroke="${O}" stroke-width="${SW}"/><rect x="${x-85}" y="415" width="170" height="20" fill="${O}"/>`:`<path d="M${x-90} 500 L${x-30} 440 L${x+10} 470 L${x+90} 380" fill="none" stroke="#2e9b57" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>`}<text x="${x}" y="640" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="52" fill="#1a1a1a">${t}</text></g>${lock(x+90,500,4.4+i*.75)}`).join('')}
+   <g class="pop" style="animation-delay:6.6s"><text x="800" y="800" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="56" fill="#d32f2f">só dava para sacar até NCz$ 50 mil</text></g>`},
+ {name:'Título',badge:'',cam:['scale(1.06)','scale(1)'],sfx:['thud@0.9'],
+  say:'Hoje você vai aprender a lição que a sua família nunca mais vai esquecer: o dinheiro que está no seu nome nem sempre está na sua mão.',
+  draw:()=>`<rect width="1600" height="900" fill="#070707"/>
+   <path class="brush" d="M80 470 C400 400 700 520 1000 440 S1400 420 1540 470" fill="none" stroke="#b71c1c" stroke-width="230" stroke-linecap="round"/>
+   <g class="pop" style="animation-delay:1s"><text x="800" y="430" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="104" fill="#fff" stroke="${O}" stroke-width="8" paint-order="stroke">O DIA EM QUE O GOVERNO</text><text x="800" y="545" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="128" fill="#fff" stroke="${O}" stroke-width="8" paint-order="stroke">PEGOU SEU DINHEIRO</text></g>
+   ${tin(1380,760,.7,'pop',1.8)}`}
+];
+
+/* ---------- CAPÍTULO 1: O ANÚNCIO ---------- */
+function dayKitchen(){return kitchen()+`<rect width="1600" height="900" fill="#fff1cf" opacity=".16"/><rect x="1080" y="150" width="300" height="250" fill="#bfe0ff" stroke="${O}" stroke-width="${SW}"/><line x1="1230" y1="150" x2="1230" y2="400" stroke="${O}" stroke-width="${SW}"/><line x1="1080" y1="275" x2="1380" y2="275" stroke="${O}" stroke-width="${SW}"/><circle cx="1150" cy="210" r="34" fill="#ffd54a"/>`}
+function paper(){return `<rect width="1600" height="900" fill="url(#paper)"/>`}
+function h1(t,y=140,size=80,col='#1a1a1a'){return `<text x="800" y="${y}" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="${size}" fill="${col}">${t}</text>`}
+function hand(x,y,t,size=54,col='#d32f2f',delay=0){return `<g class="pop" style="animation-delay:${delay}s"><text x="${x}" y="${y}" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="${size}" fill="${col}">${t}</text></g>`}
+function bubble(x,y,w,t,delay=.6){return `<g class="pop" style="animation-delay:${delay}s"><rect x="${x}" y="${y}" width="${w}" height="110" rx="26" fill="#fff" stroke="${O}" stroke-width="5"/><path d="M${x+60} ${y+108} l-20 46 l60 -46z" fill="#fff" stroke="${O}" stroke-width="5" stroke-linejoin="round"/><rect x="${x+42}" y="${y+100}" width="62" height="12" fill="#fff"/><text x="${x+w/2}" y="${y+70}" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="46" fill="#111">${t}</text></g>`}
+const B1='16/03/1990 · 07:10';
+S.push(
+ {name:'A inflação',badge:'FEV/1990',cam:['scale(1.05)','scale(1)'],sfx:['kettle@1.5'],say:'Para entender o que está acontecendo, volte um pouco. O Brasil de 1990 vive uma hiperinflação. Os preços sobem mais de oitenta por cento por mês.',
+  draw:()=>paper()+h1('HIPERINFLAÇÃO')+`<g class="pop" style="animation-delay:.2s"><rect x="740" y="210" width="120" height="520" rx="60" fill="#fff" stroke="${O}" stroke-width="${SW}"/><circle cx="800" cy="760" r="95" fill="#d32f2f" stroke="${O}" stroke-width="${SW}"/></g>
+   <rect x="772" y="300" width="56" height="440" fill="#d32f2f" class="fill-up" style="animation-delay:3s;animation-duration:4.5s"/><circle cx="800" cy="760" r="80" fill="#d32f2f"/>
+   ${[0,1,2,3,4,5].map(i=>`<line x1="870" y1="${300+i*70}" x2="900" y2="${300+i*70}" stroke="${O}" stroke-width="5"/>`).join('')}
+   ${hand(1170,330,'+80% AO MÊS',84,'#d32f2f',7.6)}
+   <g class="pop" style="animation-delay:8.2s"><path d="M720 240 l-70 -30 M710 300 l-80 0 M880 240 l70 -30" stroke="#d32f2f" stroke-width="12" stroke-linecap="round"/></g>`},
+ {name:'Remarcando preços',badge:'FEV/1990',cam:['translate(2%,0) scale(1.08)','translate(-2%,0) scale(1.08)'],sfx:['clic@0.8','clic@1.6','clic@2.4'],say:'O arroz custa uma coisa de manhã e outra à tarde. Tem supermercado com funcionário só para remarcar etiqueta.',
+  draw:()=>`<rect width="1600" height="900" fill="#e9eef3"/><rect y="720" width="1600" height="180" fill="#c9d3dc"/>
+   ${[0,1,2].map(r=>`<rect x="200" y="${240+r*160}" width="1200" height="20" fill="#8a96a3" stroke="${O}" stroke-width="5"/>${Array.from({length:9},(_,i)=>`<rect x="${230+i*128}" y="${150+r*160}" width="90" height="90" rx="8" fill="${['#f2c94c','#e57373','#81c784','#64b5f6'][(i+r)%4]}" stroke="${O}" stroke-width="5"/>`).join('')}`).join('')}
+   <g transform="translate(560 0)"><rect x="300" y="345" width="160" height="70" fill="#fff" stroke="${O}" stroke-width="5"/><text x="380" y="395" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="46" fill="#d32f2f" class="price">ARROZ</text></g>
+   ${person(620,860,{shirt:'#d9822b',mouth:'o',brows:'worried'})}
+   <g class="count"><rect x="660" y="420" width="90" height="56" rx="8" fill="#ffca28" stroke="${O}" stroke-width="5"/></g>
+   ${hand(1100,560,'Cr$ 38',64,'#555',.5)}${hand(1100,630,'Cr$ 47',64,'#d32f2f',1.5)}${hand(1100,700,'Cr$ 59',70,'#b71c1c',2.5)}
+   <g class="pop" style="animation-delay:.6s"><line x1="1030" y1="545" x2="1170" y2="545" stroke="#d32f2f" stroke-width="7"/></g><g class="pop" style="animation-delay:1.6s"><line x1="1030" y1="615" x2="1170" y2="615" stroke="#d32f2f" stroke-width="7"/></g>`+VIG},
+ {name:'O anúncio',badge:'16/03/1990 · 07:30',cam:['scale(1)','scale(1.1)'],sfx:['crowd@0'],say:'Fernando Collor tomou posse ontem. Hoje de manhã, a ministra da Economia, Zélia Cardoso de Mello, anuncia o plano.',
+  draw:()=>`<rect width="1600" height="900" fill="#1d2a4d"/><rect x="250" y="70" width="1100" height="110" fill="#1f6f43" stroke="${O}" stroke-width="${SW}"/><text x="800" y="150" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="76" fill="#f2c94c">PLANO BRASIL NOVO</text>
+   ${person(560,840,{shirt:'#2b2f3a',hair:'#2a2a2a'})}${person(1040,840,{shirt:'#7a2e45',style:'bun',hair:'#2b1d16',mouth:'o'})}
+   <path d="M880 620 L1200 620 L1170 900 L910 900Z" fill="#6b4a33" stroke="${O}" stroke-width="${SW}"/><circle cx="1040" cy="700" r="38" fill="#f2c94c" stroke="${O}" stroke-width="5"/><line x1="1000" y1="620" x2="990" y2="520" stroke="${O}" stroke-width="6"/><circle cx="990" cy="512" r="14" fill="#333" stroke="${O}" stroke-width="4"/>
+   ${label(160,330,'PRESIDENTE',470,420,.5)}${label(1010,270,'MINISTRA DA ECONOMIA',1060,410,3.4)}
+   ${Array.from({length:6},(_,i)=>`<circle class="flick" style="animation-delay:${i*.07}s;animation-duration:${.3+i*.11}s" cx="${120+i*260}" cy="${250+(i%2)*40}" r="18" fill="#fff" opacity=".7"/>`).join('')}`+VIG},
+ {name:'O limite',badge:B1,cam:['scale(1.03)','scale(1)'],sfx:['lock@2.2'],say:'A regra é simples e brutal. Na poupança, na conta corrente, nas aplicações: cada pessoa só pode sacar até cinquenta mil cruzados novos.',
+  draw:()=>paper()+h1('A REGRA')+`<rect x="200" y="360" width="1200" height="140" rx="20" fill="#fff" stroke="${O}" stroke-width="${SW}"/>
+   <rect x="210" y="370" width="240" height="120" rx="14" fill="#4caf50" class="grow-x" style="animation-delay:6.2s"/>
+   <rect x="450" y="370" width="940" height="120" rx="14" fill="#d32f2f" class="grow-x" style="animation-delay:8.0s"/>
+   ${hand(330,600,'NCz$ 50 mil',56,'#2e7d32',6.6)}${hand(330,650,'pode sacar',46,'#2e7d32',6.9)}${hand(400,260,'poupança',58,'#1a1a1a',3.0)}${hand(800,260,'conta corrente',58,'#1a1a1a',4.0)}${hand(1200,260,'aplicações',58,'#1a1a1a',5.0)}
+   <g class="pop" style="animation-delay:8.6s"><text x="920" y="455" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="92" fill="#fff">BLOQUEADO</text></g>
+   ${lock(1330,560,8.6)}`},
+ {name:'18 meses',badge:B1,cam:['scale(1)','scale(1.05)'],sfx:['page@0.6','page@1.1','page@1.6','drip@3.8','drip@4.3','drip@4.8'],say:'O resto fica preso no Banco Central por dezoito meses. Depois, volta em doze parcelas.',
+  draw:()=>paper()+`<g class="pop" style="animation-delay:.2s"><rect x="250" y="220" width="460" height="460" rx="20" fill="#fff" stroke="${O}" stroke-width="${SW}"/><rect x="250" y="220" width="460" height="100" rx="20" fill="#d32f2f" stroke="${O}" stroke-width="${SW}"/><text x="480" y="560" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="230" fill="#1a1a1a">18</text><text x="480" y="300" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="64" fill="#fff">MESES PRESO</text></g>
+   ${[0,1,2].map(i=>`<g class="fall" style="animation-delay:${.6+i*.5}s"><rect x="260" y="330" width="440" height="340" fill="#f6f2e7" stroke="${O}" stroke-width="4"/></g>`).join('')}
+   <g class="pop" style="animation-delay:4.4s"><path d="M980 260 h220 v60 h-70 v40 h-80 v-40 h-70z" fill="#9aa5b1" stroke="${O}" stroke-width="${SW}"/><text x="1090" y="720" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="72" fill="#1a1a1a">12 PARCELAS</text></g>
+   ${Array.from({length:12},(_,i)=>`<circle class="drip" style="animation-delay:${4.9+i*.14}s" cx="${1090}" cy="390" r="16" fill="#2f6fd6" stroke="${O}" stroke-width="4"/>`).join('')}`},
+ {name:'80% retido',badge:B1,cam:['scale(1.06)','scale(1)'],sfx:['thud@1.2'],say:'Estima-se que perto de oitenta por cento do dinheiro aplicado no país ficou retido.',
+  draw:()=>paper()+h1('DINHEIRO APLICADO NO BRASIL')+`<g class="pop" style="animation-delay:.2s"><circle cx="800" cy="500" r="240" fill="#4caf50" stroke="${O}" stroke-width="${SW}"/></g>
+   <g class="pop" style="animation-delay:1.0s"><path d="M800 500 L800 260 A240 240 0 1 1 571.7 425.8 Z" fill="#d32f2f" stroke="${O}" stroke-width="${SW}" stroke-linejoin="round"/></g>
+   <g class="pop" style="animation-delay:1.4s"><text x="880" y="590" text-anchor="middle" font-family="Bebas Neue,Impact" font-size="150" fill="#fff" stroke="${O}" stroke-width="6" paint-order="stroke">~80%</text></g>
+   ${hand(800,830,'retido no Banco Central (estimativa)',50,'#d32f2f',2)}`},
+ {name:'A conta não fecha',badge:'16/03/1990 · 07:40',cam:['scale(1)','scale(1.2) translate(0,6%)'],sfx:['drone@0'],say:'Você faz a conta de cabeça. O dinheiro da casa está quase todo na poupança. A parte que você pode sacar não paga nem o sinal.',
+  draw:()=>dayKitchen()+legs(800,500,140)+body(800,370,{shirt:'#3f6e9e',arms:'down'})+head(800,300,{mouth:'o',brows:'worried'})+table()
+   +`<g transform="rotate(-6 1000 540)"><rect x="930" y="500" width="160" height="60" fill="#f6f2e7" stroke="${O}" stroke-width="4"/><text x="1010" y="538" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="16" fill="#222">CONTRATO</text></g>
+   <g class="pop" style="animation-delay:5.2s"><ellipse cx="1150" cy="190" rx="250" ry="120" fill="#fff" stroke="${O}" stroke-width="${SW}"/><text x="1150" y="175" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="52" fill="#111">sinal da casa</text><text x="1150" y="235" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="52" fill="#d32f2f">não dá…</text></g>
+   <g class="pop" style="animation-delay:4.9s"><circle cx="905" cy="270" r="9" fill="#fff" stroke="${O}" stroke-width="3"/></g>`+VIG},
+ {name:'Só a lata',badge:'16/03/1990 · 07:42',cam:['scale(1.15) translate(0,3%)','scale(1.3) translate(0,5%)'],sfx:['clank@0.8'],say:'Você olha para a lata de biscoito. É tudo o que você tem na mão agora.',
+  draw:()=>`<rect width="1600" height="900" fill="${NIGHT.wall2}"/><rect width="1600" height="900" fill="#fff1cf" opacity=".12"/>${tin(800,470,1.6,'pop',.2)}
+   <g class="pop" style="animation-delay:1.2s">${notes(690,250,2)}</g><rect width="1600" height="900" fill="url(#lamp)"/>`+VIG},
+ {name:'A pergunta da Bia',badge:'16/03/1990 · 07:45',cam:['translate(-2%,0) scale(1.06)','translate(2%,0) scale(1.12)'],sfx:[],say:'A Bia aparece na porta da sala, ainda de pijama. — Pai, a gente ainda vai mudar pra casa amarela? Você não tem resposta.',
+  draw:()=>living().replace('#1c2340','#3a4670')+`<rect x="160" y="300" width="220" height="400" fill="#273156" stroke="${O}" stroke-width="${SW}"/>`
+   +`<g transform="translate(270 700) scale(.72) translate(-270 -700)">${person(270,700,{style:'long',hair:'#4a3020',shirt:'#9d7cc8',brows:'up'})}</g>`
+   +person(1000,760,{shirt:'#3f6e9e',mouth:'line',brows:'worried'})
+   +bubble(380,170,620,'Pai, a gente ainda vai mudar?',3.8)+`<rect width="1600" height="900" fill="#000" opacity="0" class="dim"/>`+VIG},
+ {name:'O rádio',badge:'16/03/1990 · 08:00',cam:['scale(1)','scale(1.08) translate(-2%,0)'],sfx:['static@0.2','door@6.2'],say:'A Lúcia liga o rádio. Em todas as estações, locutores tentando explicar regras que nem eles entendem. Você veste a jaqueta da oficina, pega o contrato da casa e sai para o banco.',
+  draw:()=>dayKitchen()+`<g transform="translate(980 470)"><rect x="-120" y="-70" width="240" height="140" rx="18" fill="#a0522d" stroke="${O}" stroke-width="${SW}"/><circle cx="-55" cy="0" r="45" fill="#3b2a20" stroke="${O}" stroke-width="5"/><rect x="20" y="-35" width="80" height="30" fill="#f3ecd2" stroke="${O}" stroke-width="4"/><line x1="60" y1="-70" x2="110" y2="-160" stroke="${O}" stroke-width="5"/></g>
+   ${[0,1,2].map(i=>`<path class="wave" style="animation-delay:${i*.4}s" d="M${1120+i*30} ${400-i*10} q30 70 0 140" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>`).join('')}
+   ${person(640,760,{style:'bun',hair:'#2b1d16',shirt:'#c2577a',brows:'worried'})}
+   ${hand(1230,640,'"…ninguém sabe ao certo…"',48,'#fff',1)}
+   <g class="slide-out" style="animation-delay:9.6s">${person(300,760,{shirt:'#1f3a5a',brows:'worried'})}</g>`+VIG}
+);
+
+/* ---------- player ---------- */
+const stage=document.getElementById('stage'),badge=document.getElementById('badge'),sub=document.getElementById('sub');
+const prog=document.getElementById('prog'),timeEl=document.getElementById('time'),playBtn=document.getElementById('play');
+const voiceCb=document.getElementById('voice'),soundCb=document.getElementById('sound'),cover=document.getElementById('cover');
+S.forEach(s=>{s.dur=Math.max(4.5,s.say.split(/\s+/).length/2.4+1.2)});
+const total=S.reduce((a,s)=>a+s.dur,0);
+const fmt=t=>`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+let idx=0,elapsed=0,playing=false,last=0,camAnim=null,sfxTimers=[],voiceDone=true;
+
+const list=document.getElementById('shots');let acc=0;
+S.forEach((s,i)=>{const li=document.createElement('li');li.innerHTML=`<button type="button" data-i="${i}"><b>${i+1}. ${s.name}</b><span>${fmt(acc)} · ${s.say.slice(0,70)}…</span></button>`;acc+=s.dur;list.appendChild(li)});
+list.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;go(+b.dataset.i,true)});
+
+function render(i){
+  const s=S[i];stage.querySelector('svg.scene')?.remove();
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 1600 900');svg.setAttribute('class','scene');svg.setAttribute('aria-hidden','true');
+  svg.innerHTML=DEFS+s.draw();stage.insertBefore(svg,stage.firstChild);
+  camAnim=svg.animate([{transform:s.cam[0]},{transform:s.cam[1]}],{duration:s.dur*1000,easing:'ease-in-out',fill:'forwards'});
+  if(!playing)camAnim.pause();
+  if(s.badge){badge.hidden=false;if(badge.textContent!==s.badge){badge.textContent=s.badge;badge.classList.remove('swap');void badge.offsetWidth;badge.classList.add('swap')}}else badge.hidden=true;
+  sub.innerHTML=`<span>${s.say}</span>`;
+  list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-current',j===i?'true':'false'));
+}
+function sceneStart(i){let t=0;for(let j=0;j<i;j++)t+=S[j].dur;return t}
+function go(i,jump){
+  idx=Math.max(0,Math.min(S.length-1,i));elapsed=sceneStart(idx);clearSfx();speechSynthesis?.cancel?.();
+  render(idx);cover.hidden=true;
+  if(jump&&!playing)play();else if(playing)startSceneMedia();
+  tick(true);
+}
+function startSceneMedia(){
+  const s=S[idx];clearSfx();
+  if(soundCb.checked){ensureAudio();s.sfx.forEach(x=>{const [type,at]=x.split('@');if(type==='tick'){sfxTimers.push(setInterval(()=>playing&&sfx('tick'),1000))}else sfxTimers.push(setTimeout(()=>playing&&sfx(type),(+at||0)*1000))})}
+  voiceDone=true;
+  if(voiceCb.checked&&'speechSynthesis' in window){
+    voiceDone=false;const u=new SpeechSynthesisUtterance(s.say);u.lang='pt-BR';u.rate=.95;u.pitch=.85;
+    const v=speechSynthesis.getVoices().find(v=>/pt[-_]BR/i.test(v.lang))||speechSynthesis.getVoices().find(v=>/^pt/i.test(v.lang));if(v)u.voice=v;
+    u.onend=u.onerror=()=>{voiceDone=true};speechSynthesis.cancel();speechSynthesis.speak(u);
+  }
+}
+function clearSfx(){sfxTimers.forEach(t=>{clearTimeout(t);clearInterval(t)});sfxTimers=[]}
+function play(){
+  if(playing)return;playing=true;cover.hidden=true;stage.classList.remove('paused');playBtn.textContent='❚❚ Pausar';
+  if(elapsed>=total-0.05){go(0)}
+  if(!stage.querySelector('svg.scene'))render(idx);
+  camAnim&&camAnim.play();startSceneMedia();if(soundCb.checked)drone(true);
+  last=performance.now();requestAnimationFrame(loop);
+}
+function pause(){playing=false;stage.classList.add('paused');playBtn.textContent='▶ Play';camAnim&&camAnim.pause();clearSfx();speechSynthesis?.cancel?.();drone(false)}
+function loop(now){
+  if(!playing)return;const dt=(now-last)/1000;last=now;
+  const end=sceneStart(idx)+S[idx].dur;
+  if(elapsed+dt<end||!voiceDone){elapsed=Math.min(elapsed+dt,end)}
+  else{ if(idx<S.length-1){idx++;elapsed=sceneStart(idx);render(idx);startSceneMedia()} else {elapsed=total;tick();pause();return} }
+  tick();requestAnimationFrame(loop);
+}
+function tick(){prog.style.width=(elapsed/total*100)+'%';timeEl.textContent=`${fmt(elapsed)} / ${fmt(total)}`}
+playBtn.onclick=()=>playing?pause():play();
+cover.onclick=()=>play();
+document.getElementById('restart').onclick=()=>{pause();go(0);play()};
+voiceCb.onchange=()=>{if(playing)startSceneMedia();else speechSynthesis?.cancel?.()};
+soundCb.onchange=()=>{if(!soundCb.checked){clearSfx();drone(false)}else if(playing){ensureAudio();drone(true);startSceneMedia()}};
+document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target===document.body){e.preventDefault();playing?pause():play()}});
+
+/* ---------- tiny synth for ambience + sfx ---------- */
+let ac=null,droneNodes=null;
+function ensureAudio(){if(!ac){try{ac=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(ac&&ac.state==='suspended')ac.resume()}
+function drone(on){
+  if(!on){if(droneNodes){droneNodes.g.gain.setTargetAtTime(0,ac.currentTime,.3);const n=droneNodes;setTimeout(()=>n.o.forEach(o=>o.stop()),1200);droneNodes=null}return}
+  ensureAudio();if(!ac||droneNodes)return;
+  const g=ac.createGain();g.gain.value=0;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=320;f.connect(g);g.connect(ac.destination);
+  const o=[55,82.4,110.3].map((fr,i)=>{const x=ac.createOscillator();x.type=i===2?'triangle':'sawtooth';x.frequency.value=fr;const xg=ac.createGain();xg.gain.value=i===2?.05:.09;x.connect(xg);xg.connect(f);x.start();return x});
+  g.gain.setTargetAtTime(.12,ac.currentTime,1.2);droneNodes={g,o};
+}
+function noise(dur,freq,q,vol){const b=ac.createBuffer(1,ac.sampleRate*dur,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=freq;f.Q.value=q;const g=ac.createGain();g.gain.value=vol;s.connect(f);f.connect(g);g.connect(ac.destination);s.start()}
+function tone(fr,dur,vol,type='sine',slide){const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=fr;if(slide)o.frequency.exponentialRampToValueAtTime(slide,ac.currentTime+dur);g.gain.setValueAtTime(vol,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+dur);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+dur)}
+function sfx(t){if(!ac)return;({
+  tick:()=>noise(.04,3200,8,.5),
+  clank:()=>{tone(620,.25,.25,'square',380);noise(.15,2500,3,.4)},
+  click:()=>noise(.05,1800,5,.6),
+  static:()=>noise(2.2,4000,.6,.35),
+  crowd:()=>noise(2.5,700,.5,.25),
+  lock:()=>{noise(.06,2600,6,.8);setTimeout(()=>tone(180,.12,.3,'square'),60)},
+  thud:()=>{tone(90,.9,.8,'sine',40);noise(.3,200,1,.6)}
+}[t]||(()=>{}))()}
+speechSynthesis?.getVoices?.();
+
+/* hook used only by the offline video renderer */
+window.__preview={count:S.length,setDur:a=>a.forEach((d,i)=>{if(S[i])S[i].dur=d}),scene:i=>{playing=true;stage.classList.remove('paused');cover.hidden=true;idx=i;render(i)}};
+/* initial frame (complete at rest) */
+render(0);tick();
+})();
+</script>
