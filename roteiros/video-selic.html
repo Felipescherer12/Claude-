@@ -528,6 +528,15 @@ S.push(scene('ThumbB','','',()=>`<radialGradient id="tgb" cx="70%" cy="55%" r="6
  +`<text x="60" y="640" font-family="Anton,Impact" font-size="200" fill="#ff3b30" stroke="${O}" stroke-width="16" paint-order="stroke">MENOS?</text>`
  +`<g transform="rotate(-3 300 760)"><rect x="60" y="690" width="520" height="120" rx="16" fill="#ffd54a" stroke="${O}" stroke-width="10"/><text x="320" y="782" text-anchor="middle" font-family="Anton,Impact" font-size="88" fill="#141414">SE A SELIC CAIR</text></g>`,['scale(1)','scale(1)']));
 
+
+/* BANNER DO CANAL (2560x1440; área segura central 1546x423 => viewBox x 317..1283, y 318..582) */
+S.push(scene('Banner','','',()=>`<linearGradient id="bn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2550"/><stop offset="1" stop-color="#0d1226"/></linearGradient><rect width="1600" height="900" fill="url(#bn)"/>`
+ +`<radialGradient id="bng" cx="50%" cy="50%" r="40%"><stop offset="0" stop-color="#ffb347" stop-opacity=".22"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient><rect width="1600" height="900" fill="url(#bng)"/>`
+ +[[95,0],[215,1],[1385,2],[1505,3]].map(([x,i])=>`<g transform="translate(${x} 585) scale(.6) translate(${-x} -585)">${who(x,585,i,{mouth:'smile'})}</g>`).join('')
+ +`<g transform="translate(445 452) scale(.72)"><rect x="-70" y="-60" width="140" height="110" rx="10" fill="#2f6fd6" stroke="${O}" stroke-width="${SW}"/><rect x="-78" y="-80" width="156" height="28" rx="8" fill="#3d82ee" stroke="${O}" stroke-width="${SW}"/><rect x="-46" y="-30" width="92" height="40" rx="6" fill="#f3ecd2" stroke="${O}" stroke-width="4"/><circle cx="0" cy="-10" r="13" fill="#ffd54a" stroke="${O}" stroke-width="4"/></g>`
+ +`<text x="830" y="470" text-anchor="middle" font-family="Anton,Impact" font-size="136" fill="#fff" stroke="${O}" stroke-width="10" paint-order="stroke" letter-spacing="3">LATA <tspan fill="#4f8ff7">AZUL</tspan></text>`
+ +`<text x="800" y="540" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="34" fill="#ffd54a" letter-spacing="1">DINHEIRO EXPLICADO EM HISTÓRIAS ANIMADAS</text>`,['scale(1)','scale(1)']));
+
 /* ---------- player ---------- */
 const stage=document.getElementById('stage'),badge=document.getElementById('badge'),sub=document.getElementById('sub');
 const prog=document.getElementById('prog'),timeEl=document.getElementById('time'),playBtn=document.getElementById('play');
