@@ -516,6 +516,18 @@ S.push(scene('Thumb','','',()=>`<radialGradient id="tg" cx="50%" cy="60%" r="70%
  +`<text x="800" y="230" text-anchor="middle" font-family="Anton,Bebas Neue,Impact" font-size="250" fill="#fff" stroke="${O}" stroke-width="16" paint-order="stroke">SELIC 7,5%</text>`
  +`<g transform="rotate(-3 800 340)"><rect x="470" y="268" width="660" height="140" rx="16" fill="#ffd54a" stroke="${O}" stroke-width="10"/><text x="800" y="372" text-anchor="middle" font-family="Anton,Bebas Neue,Impact" font-size="110" fill="#141414">QUEM PERDE?</text></g>`,['scale(1)','scale(1)']));
 
+
+/* THUMB B (não entra no vídeo) */
+S.push(scene('ThumbB','','',()=>`<radialGradient id="tgb" cx="70%" cy="55%" r="65%"><stop offset="0" stop-color="#5a1020"/><stop offset=".6" stop-color="#1a0b16"/><stop offset="1" stop-color="#07070d"/></radialGradient><rect width="1600" height="900" fill="url(#tgb)"/>`
+ +`<g transform="translate(1180 1140) scale(1.9) translate(-1180 -1140)">${who(1180,1140,0,{brows:'worried',mouth:'o'})}</g>`
+ +`<path d="M1290 380 q18 32 0 50 q-18 -18 0 -50z" fill="#7fc8ff" stroke="${O}" stroke-width="5"/>`
+ +`<g transform="translate(960 690) rotate(-10)"><rect x="-150" y="-110" width="300" height="220" rx="16" fill="#1f5c3a" stroke="${O}" stroke-width="12"/><text x="0" y="-22" text-anchor="middle" font-family="Anton,Impact" font-size="70" fill="#cfd8dc" text-decoration="line-through">6%</text><line x1="-50" y1="-45" x2="50" y2="-45" stroke="#ff5a4f" stroke-width="8"/><text x="0" y="78" text-anchor="middle" font-family="Anton,Impact" font-size="100" fill="#ff5a4f">5,25%</text></g>`
+ +`<path d="M1380 300 L1380 560" stroke="${O}" stroke-width="64" stroke-linecap="round"/><path d="M1380 300 L1380 560" stroke="#ff3b30" stroke-width="44" stroke-linecap="round"/><path d="M1290 540 L1380 680 L1470 540Z" fill="#ff3b30" stroke="${O}" stroke-width="12" stroke-linejoin="round"/>`
+ +`<text x="60" y="250" font-family="Anton,Impact" font-size="200" fill="#fff" stroke="${O}" stroke-width="16" paint-order="stroke">POUPANÇA</text>`
+ +`<text x="60" y="450" font-family="Anton,Impact" font-size="170" fill="#ff3b30" stroke="${O}" stroke-width="16" paint-order="stroke">VAI RENDER</text>`
+ +`<text x="60" y="640" font-family="Anton,Impact" font-size="200" fill="#ff3b30" stroke="${O}" stroke-width="16" paint-order="stroke">MENOS?</text>`
+ +`<g transform="rotate(-3 300 760)"><rect x="60" y="690" width="520" height="120" rx="16" fill="#ffd54a" stroke="${O}" stroke-width="10"/><text x="320" y="782" text-anchor="middle" font-family="Anton,Impact" font-size="88" fill="#141414">SE A SELIC CAIR</text></g>`,['scale(1)','scale(1)']));
+
 /* ---------- player ---------- */
 const stage=document.getElementById('stage'),badge=document.getElementById('badge'),sub=document.getElementById('sub');
 const prog=document.getElementById('prog'),timeEl=document.getElementById('time'),playBtn=document.getElementById('play');
