@@ -4,6 +4,8 @@ Versão do roteiro do confisco no estilo do canal **Stick Through Collapse** (v�
 Duração alvo: **~17 min** · Narração em **2ª pessoa** ("você") · Animação 2D estilo bonequinho.
 
 > ⚠️ Confira em fonte oficial tudo que está marcado **[CONFERIR]** antes de gravar.
+>
+> ⏱️ **Sobre a duração:** a narração tem ~2.150 palavras. Narrada a ~130 palavras/min, com as pausas dramáticas e os momentos só de efeito sonoro, dá ~17 min. No ritmo mais rápido do vídeo de referência (~155/min), dá ~14 min. Os tempos das tabelas são aproximados: ajuste depois de gravar a locução.
 
 ---
 
@@ -81,7 +83,12 @@ Quinze de março de 1990. São onze e quarenta da noite. Você está na mesa da 
 | 5 | 0:25 | Lúcia aparece na porta de camisola, sorrindo. Seta: "LÚCIA". | Personagem entra deslizando. |
 | 6 | 0:30 | Desenho de uma casinha amarela com o portão verde, imaginada num balão de pensamento. | Balão surge com quique. Cordas suaves. |
 
-Na segunda-feira, você e a Lúcia vão assinar a escritura da primeira casa de vocês. Casinha amarela, portão verde, um quarto só para a Bia. Chega de aluguel.
+Na segunda-feira, você e a Lúcia vão assinar a escritura da primeira casa de vocês. Casinha amarela, portão verde, um quarto só para a Bia. Chega de aluguel. Chega de dono de imóvel batendo na porta dia cinco. A Bia já escolheu a cor da parede do quarto dela: lilás. Ela fala disso todo dia no café da manhã.
+
+A Lúcia encosta na porta da cozinha e ri de você.
+— Vai contar de novo?
+— Só mais uma vez.
+Ela balança a cabeça e vai dormir. Você guarda a lata, apaga a luz e, pela primeira vez em muito tempo, dorme tranquilo.
 
 | # | Tempo | Na tela | Movimento / Som |
 |---|---|---|---|
@@ -140,6 +147,8 @@ A Bia aparece na porta da sala, ainda de pijama.
 — Pai, a gente ainda vai mudar pra casa amarela?
 Você não tem resposta.
 
+A Lúcia liga o rádio da cozinha. Em todas as estações, a mesma coisa: locutores tentando explicar regras que nem eles entendem. Pode pagar aluguel com o dinheiro bloqueado? Pode pagar salário? E quem estava no meio de uma compra? Ninguém sabe. Você veste a jaqueta da oficina, pega o contrato da casa e sai para o banco.
+
 ---
 
 ### 3:00 – 4:45 | A FILA — `16/03/1990 · 11:00`
@@ -157,6 +166,10 @@ Onze da manhã. A fila na frente do banco dobra o quarteirão. Ninguém sabe dir
 | 24 | 3:35 | Um X vermelho risca cada cartão. | Som de risco a cada X. |
 
 Todos tinham um plano. Todos tinham feito a coisa certa: guardar dinheiro no banco. E, de repente, isso não valia mais nada.
+
+Duas horas depois, você chega ao caixa. A moça do outro lado do vidro tem os olhos vermelhos de quem já ouviu gritos a manhã inteira. Ela mostra na tela o seu saldo. Está tudo lá: cada hora extra, cada domingo trabalhado. Só que você não pode tocar.
+— Desculpa, senhor. Hoje só até o limite.
+Você sai do banco com um envelope fino no bolso da jaqueta e a sensação de ter sido assaltado por alguém que não mostrou o rosto.
 
 | # | Tempo | Na tela | Movimento / Som |
 |---|---|---|---|
@@ -186,7 +199,9 @@ A lógica do governo era: tem dinheiro demais circulando, as pessoas gastam, os 
 | 30 | 5:08 | Torneirinhas vão aparecendo em volta da banheira, cada uma com etiqueta: "SALÁRIOS", "IMPOSTOS", "APOSENTADOS", "EXCEÇÕES". | Cada torneira surge com quique. Som de água. |
 | 31 | 5:20 | A banheira volta a encher e o gráfico volta a subir. | Linha sobe. Tensão. |
 
-E caiu, por pouco tempo. Mas o governo começou a abrir exceções: para pagar salário, para pagar imposto, para os aposentados. Torneirinha por torneirinha, o dinheiro foi voltando. Em poucos meses, a inflação estava subindo de novo [CONFERIR evolução mensal 1990–1991].
+Nos primeiros dias, você até sente isso. Na padaria, o preço do pão fica parado. No mercado, o funcionário da etiqueta não aparece mais com a maquininha. Tem gente dizendo que o plano vai dar certo, que foi um remédio amargo, mas necessário.
+
+E a inflação caiu, por pouco tempo. Mas o governo começou a abrir exceções: para pagar salário, para pagar imposto, para os aposentados. Torneirinha por torneirinha, o dinheiro foi voltando. Em poucos meses, a inflação estava subindo de novo [CONFERIR evolução mensal 1990–1991].
 
 | # | Tempo | Na tela | Movimento / Som |
 |---|---|---|---|
@@ -203,6 +218,8 @@ O resultado foi o pior dos mundos: recessão, desemprego, inflação de volta. E
 Você nunca mais confiou em banco. A lata azul virou sua poupança de verdade. "Tijolo ninguém confisca", você diz para a Bia. "Dinheiro bom é dinheiro na mão."
 
 Se essa frase parece familiar, é porque talvez o seu pai ou o seu avô repita ela até hoje. Agora você sabe de onde ela vem.
+
+E tem um custo escondido nisso. Cada nota que entra na lata azul para de trabalhar. Não rende juros, não cresce, não acompanha os preços. Você acha que está protegido do governo. Mas, em silêncio, outro inimigo começa a comer o seu dinheiro por dentro da lata. Guarde essa ideia, porque ela vai voltar no final.
 
 | # | Tempo | Na tela | Movimento / Som |
 |---|---|---|---|
@@ -238,6 +255,8 @@ Traduzindo: aquele "acordei e meu dinheiro sumiu por decreto" ficou muito mais d
 | 40 | 7:50 | Balança: um lado "MUITO MAIS DIFÍCIL" pesa bastante; o outro lado "IMPOSSÍVEL" fica vazio. | Balança oscila e para. |
 | 41 | 8:00 | Plenário do Congresso com dezenas de bonequinhos votando. Ícone de relógio: "MESES DE DEBATE". | Pan horizontal. Murmúrio. |
 
+E tem mais: depois do Plano Collor, a Justiça passou décadas julgando processos de quem perdeu dinheiro com os planos econômicos. Essa memória jurídica pesa contra qualquer governo que pense em repetir a dose. Nenhum político quer o nome ligado ao "novo Collor".
+
 Mas seja honesto consigo mesmo: muito mais difícil não é impossível. Uma emenda constitucional ou uma lei aprovada pelo Congresso poderia, em tese, criar outras restrições. Só que isso exigiria votação, debate público e tempo. Não seria uma surpresa de sexta-feira de manhã.
 
 | # | Tempo | Na tela | Movimento / Som |
@@ -259,7 +278,11 @@ E vale olhar para fora. Em 2001, a Argentina limitou os saques com o *corralito*
 
 Agora pule trinta e seis anos. É 2026. Você está na mesa da cozinha, com o celular na mão, vendo manchete sobre dívida pública. E na parede tem uma foto antiga: o seu avô, aquele mecânico, segurando a sua mãe, a Bia, no colo.
 
+O seu grupo da família no WhatsApp está pegando fogo. Seu tio mandou um áudio de quatro minutos: "Tira tudo do banco agora, vai ter confisco igual ao do Collor". Sua tia mandou um vídeo de um homem de terno dizendo que só ouro salva. Seu primo respondeu com um link de criptomoeda.
+
 Você se pergunta: isso pode acontecer comigo?
+
+Vamos responder com números, não com áudio de WhatsApp.
 
 | # | Tempo | Na tela | Movimento / Som |
 |---|---|---|---|
@@ -300,6 +323,8 @@ Quando um governo endividado precisa de dinheiro, os caminhos mais comuns hoje s
 Faça uma conta rápida: dez mil reais rendendo menos que a inflação por dez anos. No aplicativo, o número sobe devagarinho e parece que está tudo bem. Mas no mercado, esse dinheiro compra cada vez menos. Ninguém assinou decreto nenhum, e mesmo assim parte do seu patrimônio foi embora.
 
 O confisco de 1990 apareceu no telejornal. O de hoje aparece no carrinho do supermercado.
+
+Percebe a virada? O medo do seu avô fazia sentido em 1990. Mas, hoje, o que mais destrói o patrimônio do brasileiro não é um decreto. É deixar dinheiro parado rendendo menos que a inflação e colocar tudo num lugar só. É exatamente o que o seu tio do áudio está pedindo para você fazer.
 
 ---
 
@@ -346,7 +371,7 @@ Então, o que você faz? Seja qual for o cenário, estas cinco atitudes protegem
 |---|---|---|---|
 | 62 | 14:55 | Um bonequinho de terno brilhante oferecendo uma maleta escrita "PROTEÇÃO TOTAL + 5% AO MÊS". Placa vermelha piscando: "GOLPE". | Placa pisca. Som de alarme curto. |
 
-E um bônus: **desconfie de quem vende medo.** Todo boato de confisco traz junto alguém vendendo a "solução secreta": cripto milagrosa, ouro com rendimento garantido, conta em paraíso fiscal sem risco. Se alguém usa o pânico para te apressar, é hora de desacelerar.
+E um bônus: **desconfie de quem vende medo.** Todo boato de confisco traz junto alguém vendendo a "solução secreta": cripto milagrosa, ouro com rendimento garantido, conta em paraíso fiscal sem risco. Se alguém usa o pânico para te apressar, é hora de desacelerar. Medo vende. Medo dá clique. Mas medo nunca construiu patrimônio de ninguém. O que constrói é organização, paciência e diversificação, coisas sem graça nenhuma, que nenhum golpista consegue vender.
 
 ---
 
@@ -367,7 +392,9 @@ A Bia abre a lata devagar. Dentro tem notas de cruzado novo, de cruzeiro, umas n
 | 66 | 16:05 | Infográfico rápido em cima da cena: as notas antigas com etiqueta "VALOR HOJE: R$ 0" (as moedas antigas). | Etiqueta carimbada. [CONFERIR: notas antigas não têm valor de troca] |
 | 67 | 16:15 | Bia sorri triste e mostra para você: "Ele tinha tanto medo do governo pegar…" | Plano próximo. Silêncio. |
 
-As notas antigas não valem mais nada. O governo nunca precisou confiscar a lata. A inflação fez isso sozinha, ano após ano.
+Embaixo das notas tem um papel dobrado, amarelado. É o contrato da casinha amarela, que nunca foi assinado. No verso, com a letra torta do seu avô: "Nunca mais."
+
+As notas antigas não valem mais nada. O governo nunca precisou confiscar a lata. A inflação fez isso sozinha, ano após ano. O seu avô passou trinta anos se protegendo do perigo errado.
 
 — Ele tinha tanto medo de pegarem o dinheiro dele… — diz a sua mãe.
 
