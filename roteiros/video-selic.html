@@ -537,6 +537,21 @@ S.push(scene('Banner','','',()=>`<linearGradient id="bn" x1="0" y1="0" x2="0" y2
  +`<text x="830" y="470" text-anchor="middle" font-family="Anton,Impact" font-size="136" fill="#fff" stroke="${O}" stroke-width="10" paint-order="stroke" letter-spacing="3">LATA <tspan fill="#4f8ff7">AZUL</tspan></text>`
  +`<text x="800" y="540" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="34" fill="#ffd54a" letter-spacing="1">DINHEIRO EXPLICADO EM HISTÓRIAS ANIMADAS</text>`,['scale(1)','scale(1)']));
 
+
+/* BANNER B: cozinha quente (estilo 1990) */
+S.push(scene('BannerB','','',()=>`<rect width="1600" height="900" fill="#f4e6c9"/><rect y="0" width="1600" height="900" fill="url(#paper)" opacity=".5"/>`
+ +`<g opacity=".18">${Array.from({length:16},(_,i)=>`<rect x="${i*100}" y="0" width="50" height="900" fill="#e0c79a"/>`).join('')}</g>`
+ +`<radialGradient id="bbg" cx="50%" cy="50%" r="45%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient><rect width="1600" height="900" fill="url(#bbg)"/>`
+ +`<rect x="0" y="560" width="1600" height="340" fill="#8a5a3c"/><line x1="0" y1="560" x2="1600" y2="560" stroke="${O}" stroke-width="8"/>`
+ +`<g transform="translate(500 470) scale(1.05)"><rect x="-70" y="-60" width="140" height="110" rx="10" fill="#2f6fd6" stroke="${O}" stroke-width="${SW}"/><rect x="-78" y="-80" width="156" height="28" rx="8" fill="#3d82ee" stroke="${O}" stroke-width="${SW}"/><rect x="-46" y="-30" width="92" height="40" rx="6" fill="#f3ecd2" stroke="${O}" stroke-width="4"/><text x="0" y="-3" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="17" fill="#1c3f80">R$</text></g>`
+ +`<g transform="rotate(-8 610 520)"><rect x="565" y="500" width="110" height="50" rx="5" fill="#9bc28a" stroke="${O}" stroke-width="5"/></g>`
+ +`<text x="620" y="458" font-family="Anton,Impact" font-size="118" fill="#2f6fd6" stroke="${O}" stroke-width="10" paint-order="stroke" letter-spacing="3">LATA AZUL</text>`
+ +`<text x="625" y="520" font-family="Caveat,cursive" font-weight="700" font-size="50" fill="#3b2a20">histórias que explicam o seu dinheiro</text>`
+ +`<g transform="translate(140 560) scale(.62) translate(-140 -560)">${who(140,560,0,{mouth:'smile'})}</g><g transform="translate(1460 560) scale(.62) translate(-1460 -560)">${who(1460,560,1,{mouth:'smile'})}</g>`,['scale(1)','scale(1)']));
+/* PERFIL B: ícone da lata */
+S.push(scene('PerfilB','','',()=>`<rect width="1600" height="900" fill="#ffd54a"/><circle cx="800" cy="450" r="430" fill="#f4e6c9"/>`
+ +`<g transform="translate(800 500) scale(3.6)"><rect x="-70" y="-60" width="140" height="110" rx="10" fill="#2f6fd6" stroke="${O}" stroke-width="5"/><rect x="-78" y="-80" width="156" height="28" rx="8" fill="#4f8ff7" stroke="${O}" stroke-width="5"/><rect x="-48" y="-38" width="96" height="70" rx="10" fill="#f4f1ea" stroke="${O}" stroke-width="4"/><circle cx="-24" cy="-14" r="7" fill="${O}"/><circle cx="24" cy="-14" r="7" fill="${O}"/><path d="M-20 14 q20 16 40 0" stroke="${O}" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="-14" y="-94" width="28" height="10" rx="3" fill="${O}"/></g>`,['scale(1)','scale(1)']));
+
 /* ---------- player ---------- */
 const stage=document.getElementById('stage'),badge=document.getElementById('badge'),sub=document.getElementById('sub');
 const prog=document.getElementById('prog'),timeEl=document.getElementById('time'),playBtn=document.getElementById('play');
