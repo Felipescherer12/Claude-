@@ -1,6 +1,6 @@
 # Roteiro — "O governo pode confiscar seu dinheiro de novo?"
 
-**Duração alvo:** ~17 min (≈ 2.400 palavras de narração a ~145 palavras/min)
+**Duração alvo:** ~17 min (≈ 2.000 palavras de narração em ritmo calmo, ~120 palavras/min, mais pausas e B-roll. Se você narra mais rápido, alongue as partes 1 e 4.)
 **Formato:** narração + B-roll/arquivo + gráficos (funciona com ou sem rosto)
 **Modelado de:** Déclic Finance (FR) — *"Dette : l'État va-t-il se servir dans votre épargne ?"* (20x breakout), adaptado ao trauma brasileiro do Plano Collor.
 **Validação de busca (YouTube BR, vidIQ):** "plano collor" ~13 mil/mês (+155%), "collor" +306%, "confisco poupança" ~3,7 mil/mês.
@@ -74,6 +74,12 @@ Estimativas apontam que algo perto de 80% do dinheiro que circulava em aplicaç�
 
 E aqui é que a história deixa de ser número e vira drama. Empresas não conseguiam pagar salários. Gente que tinha vendido um imóvel na semana anterior viu o dinheiro da venda inteiro bloqueado. Houve relatos de infartos, falências, famílias que nunca se recuperaram.
 
+**[VISUAL: ilustração de uma família de classe média, estilo storytelling.]**
+
+Pensa numa situação comum na época. Um casal passa quinze anos guardando dinheiro para sair do aluguel. Vende o carro, junta com a poupança, fecha negócio num apartamento e marca a assinatura da escritura para a semana seguinte. Na sexta-feira, o dinheiro está lá. Na segunda, ele só pode sacar uma fração. O vendedor desiste, o sonho da casa própria vira pó, e o dinheiro que sobrou fica preso por um ano e meio — perdendo valor para uma inflação que ainda não tinha ido embora.
+
+Histórias assim se repetiram em todo o país. E muita gente só conseguiu reaver parte das perdas décadas depois, na Justiça. Algumas ações sobre os planos econômicos ficaram rolando nos tribunais por mais de trinta anos [CONFERIR status dos acordos dos planos econômicos].
+
 **[PAUSA DRAMÁTICA / música baixa]**
 
 E o pior: não funcionou.
@@ -95,6 +101,10 @@ O resultado final foi o pior dos mundos: recessão, desemprego, inflação de vo
 Esse é o ponto que eu quero que você guarde: o maior estrago do confisco não foi só financeiro. Foi psicológico. Uma geração inteira de brasileiros passou a desconfiar de banco, a guardar dinheiro em dólar debaixo do colchão, a comprar imóvel porque "tijolo ninguém confisca".
 
 Seu pai ou seu avô provavelmente pensa assim até hoje. E agora você sabe por quê.
+
+**[VISUAL: memes/frases típicas — "dinheiro bom é dinheiro na mão", "imóvel nunca desvaloriza".]**
+
+E isso tem um custo escondido. Quem passou a vida inteira evitando banco e investimento por medo de um novo confisco deixou de ganhar com os juros compostos durante décadas. Guardar dinheiro em casa protege de um bloqueio, mas expõe a outro inimigo: a inflação, que corrói aquele dinheiro todos os anos sem fazer barulho. Ou seja, o trauma do Collor continuou cobrando a conta de muitas famílias mesmo depois que o dinheiro foi devolvido.
 
 Collor sofreu processo de impeachment e renunciou em 1992. A inflação só foi controlada de verdade com o Plano Real, em 1994 — e sem confiscar nada.
 
@@ -148,6 +158,12 @@ Na prática, quando um governo endividado precisa de dinheiro, os caminhos mais 
 
 **[PAUSA]**
 
+**[VISUAL: simulação na tela — R$ 10.000 na poupança vs. R$ 10.000 corrigidos pela inflação ao longo de 10 anos.]**
+
+Vamos fazer uma conta rápida. Imagina R$ 10 mil parados rendendo menos que a inflação por dez anos. Você abre o aplicativo e vê o número subindo devagarinho, então parece que está tudo bem. Mas quando vai ao mercado, aquele dinheiro compra cada vez menos. Ninguém bloqueou sua conta, ninguém assinou decreto nenhum — e mesmo assim parte do seu patrimônio foi embora [CONFERIR: inserir simulação com dados reais de poupança x IPCA].
+
+É por isso que eu chamo a inflação de confisco silencioso. Ele não aparece no telejornal. Ele aparece no carrinho do supermercado.
+
 Percebe a virada? O medo do confisco é compreensível. Mas, estatisticamente, o que mais destrói o patrimônio do brasileiro hoje é deixar dinheiro rendendo abaixo da inflação e concentrar tudo em um lugar só.
 
 ---
@@ -161,6 +177,8 @@ Agora, a parte prática. Independentemente de você achar que o risco é alto ou
 **1. Entenda o FGC — e respeite o limite.**
 O Fundo Garantidor de Créditos cobre até R$ 250 mil por CPF, por instituição financeira, com teto total de R$ 1 milhão a cada quatro anos [CONFERIR valores atuais no site do FGC]. Ele cobre poupança, conta corrente, CDB, LCI, LCA, entre outros. Se você tem mais que isso, divida entre instituições diferentes — de conglomerados diferentes.
 
+Um detalhe que pega muita gente: o limite conta por *conglomerado*, não por marca. Às vezes dois bancos com nomes diferentes pertencem ao mesmo grupo. Antes de dividir seu dinheiro, confira no site do FGC quem é dono de quem. E lembre que o limite inclui os rendimentos, não só o valor que você aplicou.
+
 **2. Saiba o que o FGC *não* cobre.**
 Tesouro Direto não tem FGC — porque o garantidor é o próprio governo federal. Ações, fundos e previdência também não. Isso não significa que são inseguros; significa que o risco é de outro tipo. Diversificar é misturar riscos diferentes, não só produtos diferentes.
 
@@ -170,10 +188,14 @@ Para a reserva de emergência, opções com liquidez diária que rendem perto de
 **4. Considere uma parte em ativos fora do real.**
 Não é para fugir do Brasil. É para não ter 100% do seu patrimônio exposto a um único país e uma única moeda. Pode ser via ETFs internacionais negociados aqui na bolsa, BDRs ou conta no exterior. Uma fatia pequena e consciente já reduz bastante o risco.
 
+Repara que isso é exatamente o que as famílias ricas fazem há décadas. Não porque elas sabem quando vai ter crise, mas justamente porque *ninguém* sabe. Elas montam o patrimônio para sobreviver a vários cenários ao mesmo tempo, em vez de apostar tudo em um só. E ter uma parte no exterior também tem custos e impostos próprios, então estude antes ou converse com um profissional.
+
 **5. Tenha um pouco de tudo — inclusive acesso rápido.**
 Reserva de emergência acessível, investimentos de longo prazo diversificados, e um pouco em ativos reais se fizer sentido para você. O objetivo é que nenhum evento isolado — confisco, quebra de banco, crise cambial — destrua tudo de uma vez.
 
 **[VISUAL: pirâmide/pizza mostrando divisão ilustrativa — deixar claro que é exemplo, não recomendação.]**
+
+E um bônus, que vale ouro e não custa nada: **desconfie de quem vende medo.** Toda vez que surge boato de confisco, aparece alguém oferecendo a "solução secreta" — criptomoeda milagrosa, ouro com rendimento garantido, conta em paraíso fiscal sem nenhum risco. Promessa de proteção total com retorno alto é o roteiro clássico de golpe. Se alguém usa o pânico para te apressar, esse é o sinal para você desacelerar.
 
 ---
 
